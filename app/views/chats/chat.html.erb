@@ -1,0 +1,11 @@
+<ul>
+  <% @messages.each do |msg| %>
+    <li><strong><%= msg[0] + ': ' %><%= msg[1]%></li>
+  <% end %>
+</ul>
+<% form_with(model: @chat, local: true) do |f| %>
+  <%= f.hidden_field :user_id, value: current_user %>
+  <%= f.hidden_field :match_id, value: @match %>
+  <%= f.text_field :message %>
+  <%= f.submit 'Enviar' %>
+<% end %>

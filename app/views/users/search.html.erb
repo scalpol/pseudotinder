@@ -1,0 +1,15 @@
+<div class="row justify-content-md-center">
+  <div class="col-md-5"></div>
+  <div style="padding: 40px; text-align: center", class="col-md-2">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="<%= @user.picture %>" alt="User profile picture">
+      <div class="card-body">
+        <h5 class="card-title"><%= @user.email %></h5>
+        <p class="card-text"><%= @user.bio %></p>
+      </div>
+       <%= link_to '💛', liked_path(choosed: @user), class: "btn btn-success", method: :post %>
+       <%= link_to '❌', not_liked_path(choosed: @user), class: "btn btn-danger", method: :post %>
+    </div>
+  </div>
+  <div class="col-md-5"></div>
+</div>
